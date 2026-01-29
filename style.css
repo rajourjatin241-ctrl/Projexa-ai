@@ -1,0 +1,3551 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+header nav {
+    background: linear-gradient(90deg, #6c5ce7, #00b894);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header nav h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffeaa7;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    color: white;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Cards & Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #6c5ce7;
+}
+
+/* Exciting Buttons */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Tables */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background: #6c5ce7;
+    color: white;
+}
+
+table tr:hover {
+    background: #f1f2f6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2d3436;
+    color: white;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-gap-10 {
+    gap: 10px;
+}
+
+.grid-gap-20 {
+    gap: 20px;
+}
+
+.grid-gap-30 {
+    gap: 30px;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.third-width {
+    width: 33.33%;
+}
+
+.quarter-width {
+    width: 25%;
+}
+
+.max-width-500 {
+    max-width: 500px;
+}
+
+.max-width-800 {
+    max-width: 800px;
+}
+
+.max-width-1200 {
+    max-width: 1200px;
+}
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-medium {
+    font-size: 16px;
+}
+
+.text-large {
+    font-size: 20px;
+}
+
+.text-xlarge {
+    font-size: 24px;
+}
+
+.bg-primary {
+    background: #6c5ce7;
+    color: white;
+}
+
+.bg-secondary {
+    background: #00b894;
+    color: white;
+}
+
+.bg-light {
+    background: #f0f4f8;
+    color: #333;
+}
+
+.bg-dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+.border-primary {
+    border: 2px solid #6c5ce7;
+}
+
+.border-secondary {
+    border: 2px solid #00b894;
+}
+
+.border-radius-5 {
+    border-radius: 5px;
+}
+
+.border-radius-10 {
+    border-radius: 10px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-30 {
+    padding: 30px;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.margin-30 {
+    margin: 30px;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.z-index-10 {
+    z-index: 10;
+}
+
+.z-index-20 {
+    z-index: 20;
+}
+
+.z-index-30 {
+    z-index: 30;
+}
+
+/* Media Queries */
+@media (max-width:768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width:480px) {
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+:focus {
+    outline: 2px solid #6c5ce7;
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0,
+            0);
+    border: 0;
+}
+
+.high-contrast {
+    background: #000;
+    color: #fff;
+}
+
+.high-contrast a {
+    color: #0ff;
+}
+
+.high-contrast a:hover {
+    color: #ff0;
+}
+
+@media (prefers-reduced-motion:reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    header,
+    footer,
+    nav {
+        display: none;
+    }
+
+    .card {
+        box-shadow: none;
+        border: none;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+
+        color: #000;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f4f8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6c5ce7;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00b894;
+}
+
+body.dark ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: #00b894;
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6c5ce7;
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 140px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left:
+        50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode</button> */
+/* JavaScript Function */
+
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    /* important for <a> links */
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b 894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0,
+            0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b 894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b 894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b 894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #6c5ce7, #00b894);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero .cta-btn {
+    background: white;
+    color: #6c5ce7;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero .cta-btn:hover {
+    background: #6c5ce7;
+    color: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero .cta-btn:active {
+    transform: scale(0.95);
+}
+
+/* Exciting Button Styles */
+.exciting-btn {
+    background: linear-gradient(45deg, #6c5ce7, #00b894);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    text-decoration: none;
+    display: inline-block;
+}
+
+.exciting-btn:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: linear-gradient(45deg, #00b894, #6c5ce7);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exciting-btn:active {
+    transform: scale(0.95);
+}
+
+/* Example Usage */
+
+/* <button class="exciting-btn">Click Me!</button> */
+/* <a href="#" class="exciting-btn">Learn More</a> */
+
+/* Table Styles */
+table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background: #6c5ce7;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply fadeIn animation to body */
+body {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Apply slideUp animation to cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Apply pulse animation to buttons with class 'pulse' */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #6c5ce7;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode</button> */
+/* JavaScript Function */
+
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode</button> */
+/* JavaScript Function */
+
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0,
+            0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0 .5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0,
+            0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode       
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode           
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode       
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode       
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode   
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode   
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0 .5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode   
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0 .5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode       
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+/* Dark Mode Toggle Button */
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Form Input Focus Effect */
+input:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.5);
+}
+
+/* Section Divider */
+section {
+    border-bottom: 2px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Link Underline Animation */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffeaa7;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme Toggle Script */
+/* Add this script in your HTML file within <script> tags */
+/* Example: <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Dark Mode   
+</button> */
+/* JavaScript Function */
+/* Dark Mode Styles */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #00b894, #6c5ce7);
+}
+
+body.dark .hero .cta-btn {
+    background: #f1f1f1;
+
+    color: #00b894;
+}
+
+body.dark .hero .cta-btn:hover {
+    background: #00b894;
+    color: #f1f1f1;
+}
+
+body.dark table th {
+    background: #00b894;
+}
+
+body.dark table tr:nth-child(even) {
+    background: #1e1e1e;
+}
+
+body.dark table tr:hover {
+    background: #ffeaa7;
+}
+
+.card.p.dark{
+    color: red;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #00b894;
+}
+
+/* Animations for Cards */
+.card {
+    animation: slideUp 0.5s ease forwards;
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Button Pulse Animation */
+button.pulse {
+    animation: pulse 1.5s infinite;
+}
+/* Search Bar Container */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 500px;
+  background: #f5f5f5;
+  border-radius: 50px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.search-bar:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Input Field */
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.search-bar input:focus::placeholder {
+  color: #bbb;
+}
+
+/* Search Button */
+.search-bar button {
+  background: linear-gradient(135deg, #4a90e2, #0078d7);
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: linear-gradient(135deg, #0078d7, #005bb5);
+  transform: scale(1.05);
+}

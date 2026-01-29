@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Take Attendance - Smart Attendance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>Smart Attendance</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="student.html">Student Portal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="timetable.html">Time Table</a></li>
+      <li><a href="attendance.html">Take Attendance</a></li>
+      <li><a href="holidays.html">Holiday Planner</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Take Attendance</h2>
+  <p>Mark students present or absent for today’s class.</p>
+</section>
+
+<section>
+  <form id="attendanceForm">
+    <table>
+      <tr><th>Student ID</th><th>Name</th><th>Present</th><th>Absent</th></tr>
+      <tr>
+        <td>101</td><td>rohan</td>
+        <td><input type="radio" name="rohan" value="Present"></td>
+        <td><input type="radio" name="rohan" value="Absent"></td>
+      </tr>
+      <tr>
+        <td>102</td><td>meera</td>
+        <td><input type="radio" name="meera" value="Present"></td>
+        <td><input type="radio" name="meera" value="Absent"></td>
+      </tr>
+      <tr>
+        <td>103</td><td>boby</td>
+        <td><input type="radio" name="boby" value="Present"></td>
+        <td><input type="radio" name="boby" value="Absent"></td>
+      </tr>
+      <tr>
+        <td>104</td><td>devesh</td>
+        <td><input type="radio" name="devesh" value="Present"></td>
+        <td><input type="radio" name="devesh" value="Absent"></td>
+      </tr>
+      <tr>
+        <td>105</td><td>shourya</td>
+        <td><input type="radio" name="shourya" value="Present"></td>
+        <td><input type="radio" name="shourya" value="Absent"></td>
+      </tr><tr>
+        <td>106</td><td>mohit</td>
+        <td><input type="radio" name="mohit" value="Present"></td>
+        <td><input type="radio" name="mohit" value="Absent"></td>
+      </tr><tr>
+        <td>107</td><td>shubham</td>
+        <td><input type="radio" name="shubham" value="Present"></td>
+        <td><input type="radio" name="shubham" value="Absent"></td>
+      </tr>
+    </table>
+    <br>
+    <button class="exciting-btn" type="submit">✅ Submit Attendance</button>
+    <button class="exciting-btn" type="reset">🔄 Reset</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2026 Smart Attendance System</p>
+</footer>
+
+<script>
+// Handle attendance submission
+document.getElementById("attendanceForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Attendance submitted successfully!");
+});
+</script>
+</body>
+</html>

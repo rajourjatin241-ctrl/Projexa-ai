@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Smart Attendance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>Smart Attendance</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="student.html">Student Portal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="timetable.html">Time Table</a></li>
+      <li><a href="attendance.html">Take Attendance</a></li>
+      <li><a href="holidays.html">Holiday Planner</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Admin Dashboard</h2>
+  <p>Analytics for students: rohan, meera, boby, devesh, shourya, mohit, shubham.</p>
+</section>
+
+<section>
+  <h2>Attendance Overview</h2>
+  <canvas id="attendanceChart"></canvas>
+</section>
+
+<section>
+  <h2>Monthly Trends</h2>
+  <canvas id="monthlyChart"></canvas>
+</section>
+
+<section>
+  <h2>Class Performance</h2>
+  <canvas id="classChart"></canvas>
+</section>
+
+<footer>
+  <p>&copy; 2026 Smart Attendance System</p>
+</footer>
+
+<script>
+// Students from attendance.html
+const students = ["rohan","meera","boby","devesh","shourya","mohit","shubham"];
+
+// Example attendance percentages (dummy data for charts)
+const attendancePercentages = [92, 88, 95, 90, 85, 93, 91];
+
+// Attendance Overview Chart (line chart per student)
+new Chart(document.getElementById('attendanceChart'), {
+  type: 'line',
+  data: {
+    labels: students,
+    datasets: [{
+      label: 'Attendance %',
+      data: attendancePercentages,
+      borderColor: '#6c5ce7',
+      backgroundColor: '#a29bfe',
+      fill: false,
+      tension: 0.3
+    }]
+  }
+});
+
+// Monthly Trends Chart (bar chart showing average attendance per month)
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May'],
+    datasets: [{
+      label: 'Average Attendance %',
+      data: [90, 92, 88, 94, 91],
+      backgroundColor: '#00b894'
+    }]
+  }
+});
+
+// Class Performance Chart (pie chart distribution among students)
+new Chart(document.getElementById('classChart'), {
+  type: 'pie',
+  data: {
+    labels: students,
+    datasets: [{
+      label: 'Attendance Distribution',
+      data: attendancePercentages,
+      backgroundColor: ['#6c5ce7','#00cec9','#e17055','#fab1a0','#0984e3','#fd79a8','#55efc4']
+    }]
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>Smart Attendance</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="student.html">Student Portal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="timetable.html">Time Table</a></li>
+      <li><a href="attendance.html">Take Attendance</a></li>
+      <li><a href="holidays.html">Holiday Planner</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search site...">
+  <button onclick="searchSite()">Search</button>
+</div>
+
+<section class="hero">
+  <h2>Automating Attendance with AI</h2>
+  <p>Fast, reliable, and smart attendance tracking for schools and workplaces.</p>
+  <a href="features.html" class="btn">Explore Features</a>
+</section>
+
+<section>
+  <h2>Why Choose Us?</h2>
+  <div class="grid">
+    <div class="card"><h3>Accuracy</h3><p>AI ensures 95%+ accuracy in attendance marking.</p></div>
+    <div class="card"><h3>Speed</h3><p>QR & face recognition make check-ins instant.</p></div>
+    <div class="card"><h3>Reports</h3><p>Generate detailed reports with one click.</p></div>
+  </div>
+</section>
+
+
+<footer>
+  <p>&copy; 2026 Smart Attendance System</p>
+</footer>
+</body>
+</html>
+x 
+<script>
+function toggleTheme(){ document.body.classList.toggle("dark"); }
+function searchSite(){
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const pages = {
+    'home': 'index.html',
+    'features': 'features.html',
+    'dashboard': 'dashboard.html',      
+    'student portal': 'student.html',
+    'contact': 'contact.html',
+    'about us': 'about.html',
+    'pricing': 'pricing.html',
+    'faq': 'faq.html',
+    'blog': 'blog.html',
+    'support': 'support.html',
+    'gallery': 'gallery.html',
+    'time table': 'timetable.html'
+  };
+  if(pages[query]){
+    window.location.href = pages[query];    
+    } else {
+    alert('Page not found. Please try another search term.');
+    }
+}
+
+</script>

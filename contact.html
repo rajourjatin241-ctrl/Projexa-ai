@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Smart Attendance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <style>
+    /* General Reset */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0078d7;
+      color: #fff;
+      padding: 15px 30px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #0078d7, #4a90e2);
+      color: #fff;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #0078d7;
+      box-shadow: 0 0 6px rgba(0,120,215,0.3);
+      outline: none;
+    }
+
+    form button {
+      background: linear-gradient(135deg, #0078d7, #005bb5);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    form button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #005bb5, #004494);
+    }
+
+    /* Office Section */
+    section h3 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 24px;
+      color: #0078d7;
+    }
+
+    section p {
+      text-align: center;
+      margin: 10px auto;
+      max-width: 600px;
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<header> 
+  <nav>
+    <h1>Smart Attendance</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="student.html">Student Portal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="timetable.html">Time Table</a></li>
+      <li><a href="holidays.html">Holiday Planner</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Contact Us</h2>
+</section>
+
+<section>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<section>
+  <h3>Our Office</h3>
+  <p>Smart Attendance HQ<br>123 Innovation Street, New Delhi, India<br>
+     Phone: +91 98765 43210<br>Email: support@smartattendance.com</p>
+  <iframe src="https://maps.google.com/maps?q=New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="300" style="border:0;"></iframe>
+</section>
+
+<footer>
+  <p>&copy; 2026 Smart Attendance System</p>
+</footer>
+</body>
+</html>

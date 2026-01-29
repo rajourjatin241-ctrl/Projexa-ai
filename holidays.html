@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Holiday Planner - Smart Attendance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <style>
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin: 30px auto;
+      max-width: 800px;
+    }
+    .day {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .day:hover { transform: scale(1.05); background: #f9f9f9; }
+    .holiday { background: linear-gradient(45deg, #6c5ce7, #00b894); color: white; font-weight: bold; }
+    .calendar-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>Smart Attendance</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="student.html">Student Portal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="timetable.html">Time Table</a></li>
+      <li><a href="attendance.html">Take Attendance</a></li>
+      <li><a href="holidays.html">Holiday Planner</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Holiday Planner</h2>
+  <p>All holidays for the year at a glance.</p>
+</section>
+
+<section>
+  <h2>Holiday List - 2026</h2>
+  <div id="holidayList"></div>
+</section>
+
+<section>
+  <h2>Holiday Calendar</h2>
+  <div id="calendarContainer"></div>
+</section>
+
+<section>
+  <h2>Planner Actions</h2>
+  <button class="exciting-btn" onclick="alert('Filter applied!')">🔍 Filter Holidays</button>
+  <button class="exciting-btn" onclick="alert('Holiday list downloaded!')">📥 Download Planner</button>
+  <button class="exciting-btn" onclick="alert('Showing upcoming holidays!')">📅 Upcoming Holidays</button>
+</section>
+
+<footer>
+  <p>&copy; 2026 Smart Attendance System</p>
+</footer>
+
+<script>
+// Holiday data
+const holidays = [
+  { date: '2026-01-26', name: 'Republic Day', type: 'National' },
+  { date: '2026-03-08', name: 'Mahashivratri', type: 'Religious' },
+  { date: '2026-03-29', name: 'Holi', type: 'Festival' },
+  { date: '2026-04-02', name: 'Good Friday', type: 'Religious' },
+  { date: '2026-04-14', name: 'Ambedkar Jayanti', type: 'National' },
+  { date: '2026-05-01', name: 'Labour Day', type: 'National' },
+  { date: '2026-08-15', name: 'Independence Day', type: 'National' },
+  { date: '2026-10-02', name: 'Gandhi Jayanti', type: 'National' },
+  { date: '2026-10-12', name: 'Dussehra', type: 'Festival' },
+  { date: '2026-11-01', name: 'Diwali', type: 'Festival' },
+  { date: '2026-12-25', name: 'Christmas', type: 'Religious' }
+];
+
+// Render holiday list
+const listContainer = document.getElementById('holidayList');
+let listHTML = '<table><tr><th>Date</th><th>Holiday</th><th>Type</th></tr>';
+holidays.forEach(h => {
+  const d = new Date(h.date);
+  listHTML += `<tr><td>${d.toDateString()}</td><td>${h.name}</td><td>${h.type}</td></tr>`;
+});
+listHTML += '</table>';
+listContainer.innerHTML = listHTML;
+
+// Render calendar for each month
+function renderCalendar(year, month) {
+  const container = document.createElement('div');
+  const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
+  container.innerHTML = `<h3>${monthName} ${year}</h3>
+    <div class="calendar-header">
+      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>`;
+  const calendar = document.createElement('div');
+  calendar.className = 'calendar';
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+
+  // Empty slots before first day
+  for (let i=0; i<firstDay; i++) {
+    calendar.appendChild(document.createElement('div'));
+  }
+
+  for (let day=1; day<=daysInMonth; day++) {
+    const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'day';
+    dayDiv.textContent = day;
+
+    const holiday = holidays.find(h => h.date === dateStr);
+    if (holiday) {
+      dayDiv.classList.add('holiday');
+      dayDiv.innerHTML = `${day}<br>${holiday.name}`;
+    }
+    calendar.appendChild(dayDiv);
+  }
+
+  container.appendChild(calendar);
+  document.getElementById('calendarContainer').appendChild(container);
+}
+
+// Generate calendars for all months
+for (let m=0; m<12; m++) {
+  renderCalendar(2026, m);
+}
+</script>
+</body>
+</html>
