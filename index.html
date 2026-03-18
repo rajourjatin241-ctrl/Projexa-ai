@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KR Mangalam StudentFreelance - Study Platform</title>
+    <link rel="stylesheet" href="styles-study.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional study enhancements */
+        .hero-title {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            color: #7f8c8d;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #dfe6e9;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+        }
+
+        .service-card h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .stat {
+            background: #ffffff;
+            border: 1px solid #dfe6e9;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-number {
+            font-family: 'Merriweather', serif;
+            color: #3498db;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .section-header h2 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .study-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        .clean-text {
+            font-family: 'Inter', sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .study-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .study-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .study-button-secondary {
+            background: white;
+            color: #2c3e50;
+            border: 2px solid #dfe6e9;
+        }
+
+        .study-button-secondary:hover {
+            border-color: #3498db;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <!-- Study Progress Bar -->
+    <div class="study-progress-bar"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2 class="clean-text">KR Mangalam StudentFreelance</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+                <button class="btn-primary" onclick="showLoginModal()">Sign In</button>
+                <button class="btn-secondary" onclick="showRegisterModal()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title clean-text">The Freelance Platform for KR Mangalam University Students</h1>
+                <p class="hero-subtitle clean-text">Connect with talented KR Mangalam students for tutoring, programming, design, writing, and more. Get quality services at student-friendly prices.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" onclick="showRegisterModal()">Get Started</button>
+                    <button class="btn-secondary btn-large">Browse Services</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder">
+                    <div class="placeholder-icon">🎓</div>
+                    <p class="clean-text">KR Mangalam Marketplace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="clean-text">Popular Services</h2>
+                <p class="clean-text">What students can offer and find</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="window.location.href='services/tutoring.html'">
+                    <div class="service-icon">📚</div>
+                    <h3>Tutoring</h3>
+                    <p class="clean-text">Math, Science, Languages, Test Prep</p>
+                    <div class="tutor-count clean-text">25 tutors available</div>
+                </div>
+                <div class="service-card" onclick="window.location.href='services/programming.html'">
+                    <div class="service-icon">💻</div>
+                    <h3>Programming</h3>
+                    <p class="clean-text">Web Development, Apps, Data Science</p>
+                    <div class="tutor-count clean-text">45 developers</div>
+                </div>
+                <div class="service-card" onclick="window.location.href='services/design.html'">
+                    <div class="service-icon">🎨</div>
+                    <h3>Design</h3>
+                    <p class="clean-text">Graphics, UI/UX, Presentations</p>
+                    <div class="tutor-count clean-text">35 designers</div>
+                </div>
+                <div class="service-card" onclick="window.location.href='services/writing.html'">
+                    <div class="service-icon">✍️</div>
+                    <h3>Writing</h3>
+                    <p class="clean-text">Essays, Content, Editing</p>
+                    <div class="tutor-count clean-text">52 writers</div>
+                </div>
+                <div class="service-card" onclick="window.location.href='services/marketing.html'">
+                    <div class="service-icon">📱</div>
+                    <h3>Digital Marketing</h3>
+                    <p class="clean-text">Social Media, SEO, Ads</p>
+                    <div class="tutor-count clean-text">38 marketers</div>
+                </div>
+                <div class="service-card" onclick="window.location.href='services/creative.html'">
+                    <div class="service-icon">🎵</div>
+                    <h3>Creative Services</h3>
+                    <p class="clean-text">Music, Video, Photography</p>
+                    <div class="tutor-count clean-text">28 creators</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Start earning or finding help in 3 simple steps</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up</h3>
+                    <p>Register with your college email and create your profile</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Offer or Find Services</h3>
+                    <p>List your skills or browse services from other students</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect & Collaborate</h3>
+                    <p>Message, work together, and get paid securely</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number clean-text">5,000+</div>
+                    <div class="stat-label clean-text">Student Users</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number clean-text">2,500+</div>
+                    <div class="stat-label clean-text">Services Offered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number clean-text">100+</div>
+                    <div class="stat-label clean-text">Colleges</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number clean-text">₹50L+</div>
+                    <div class="stat-label clean-text">Earned by Students</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why KR Mangalam StudentFreelance?</h2>
+                    <p>We created this platform exclusively for KR Mangalam University students to help them earn money while gaining valuable experience. Whether you're looking to offer your skills or find affordable help from fellow KR Mangalam students, our platform makes it easy and safe.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <span>KR Mangalam student verification</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <span>Secure payment system</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <span>Student-friendly pricing</span>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <span>Build your portfolio</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-placeholder">
+                        <div class="placeholder-icon">🎯</div>
+                        <p>Empowering KR Mangalam Students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="clean-text">KR Mangalam StudentFreelance</h3>
+                    <p class="clean-text">The freelance platform built exclusively for KR Mangalam University students.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <a href="#services">Services</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#about">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Safety</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="clean-text">&copy; 2024 KR Mangalam StudentFreelance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
+
+    <!-- Study Scripts -->
+    <script src="animations-study.js"></script>
+    <script src="apply-study-theme.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize study effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update progress bar on scroll
+            const progressBar = document.querySelector('.study-progress-bar');
+            if (progressBar) {
+                window.addEventListener('scroll', () => {
+                    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollProgress = (window.scrollY / scrollHeight) * 100;
+                    progressBar.style.width = scrollProgress + '%';
+                });
+            }
+            
+            console.log('📚 Study effects initialized!');
+        });
+    </script>
+</body>
+</html>

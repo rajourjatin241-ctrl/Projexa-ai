@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KR Mangalam StudentFreelance - Navigation Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hub-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
+        }
+        
+        .hub-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hub-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .hub-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hub-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-tile {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .service-tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .service-description {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .service-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .quick-actions {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .action-btn {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .action-btn:hover {
+            border-color: #3b82f6;
+            background: #f0f9ff;
+            transform: translateY(-2px);
+        }
+        
+        .action-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .floating-nav {
+            height: 50; 
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 0.75rem;
+            margin: 0.25rem 0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #374151;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .nav-item:hover {
+            background: #f3f4f6;
+            color: #3b82f6;
+        }
+        
+        .user-status {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .status-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="hub-container">
+        <div class="hub-content">
+            <div class="hub-header">
+                <h1 class="hub-title">🎓 KR Mangalam StudentFreelance</h1>
+                <p class="hub-subtitle">Your complete freelance marketplace - All services connected in one place</p>
+            </div>
+            
+            <div class="user-status" id="userStatus">
+                <div class="status-icon">👋</div>
+                <h3>Welcome to KR Mangalam StudentFreelance!</h3>
+                <p>Sign in to access all services and start earning</p>
+                <button class="btn-primary" onclick="showLoginModal()" style="margin-top: 1rem;">Sign In</button>
+            </div>
+            
+            <div class="services-grid">
+                <a href="services/tutoring.html" class="service-tile">
+                    <div class="service-icon">📚</div>
+                    <h3 class="service-name">Tutoring Services</h3>
+                    <p class="service-description">Get academic help from top KR Mangalam students</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Tutors</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.8⭐</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹35/hr</div>
+                            <div class="stat-label">Avg Price</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="services/programming.html" class="service-tile">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-name">Programming Services</h3>
+                    <p class="service-description">Web development, apps, and coding help</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-number">45+</div>
+                            <div class="stat-label">Developers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.7⭐</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹40/hr</div>
+                            <div class="stat-label">Avg Price</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="services/design.html" class="service-tile">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-name">Design Services</h3>
+                    <p class="service-description">Logos, UI/UX, graphics, and presentations</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-number">35+</div>
+                            <div class="stat-label">Designers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.9⭐</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹38/hr</div>
+                            <div class="stat-label">Avg Price</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="services/writing.html" class="service-tile">
+                    <div class="service-icon">✍️</div>
+                    <h3 class="service-name">Writing Services</h3>
+                    <p class="service-description">Essays, content, editing, and creative writing</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-number">52+</div>
+                            <div class="stat-label">Writers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.8⭐</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹30/hr</div>
+                            <div class="stat-label">Avg Price</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="services/marketing.html" class="service-tile">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-name">Marketing Services</h3>
+                    <p class="service-description">Social media, SEO, ads, and brand strategy</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-number">42+</div>
+                            <div class="stat-label">Marketers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.6⭐</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹42/hr</div>
+                            <div class="stat-label">Avg Price</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="services/creative.html" class="service-tile">
+                    <div class="service-icon">🎵</div>
+                    <h3 class="service-name">Creative Services</h3>
+                    <p class="service-description">Music, video, photography, and illustration</p>
+                    <div class="service-stats">
+                        <div class="stat">
+                            <div class="stat-number">28+</div>
+                            <div class="stat-label">Creators</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.7⭐</div>
+                            <div class="stat-label">Rating</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹45/hr</div>
+                            <div class="stat-label">Avg Price</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="quick-actions">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Quick Actions</h3>
+                <div class="actions-grid">
+                    <a href="index.html" class="action-btn">
+                        <div class="action-icon">🏠</div>
+                        <div>Home</div>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showLoginModal(); return false;">
+                        <div class="action-icon">🔐</div>
+                        <div>Sign In</div>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showRegisterModal(); return false;">
+                        <div class="action-icon">📝</div>
+                        <div>Register</div>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showNotification('Dashboard coming soon!', 'info'); return false;">
+                        <div class="action-icon">📊</div>
+                        <div>Dashboard</div>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showNotification('Messages coming soon!', 'info'); return false;">
+                        <div class="action-icon">💬</div>
+                        <div>Messages</div>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showNotification('Help center coming soon!', 'info'); return false;">
+                        <div class="action-icon">❓</div>
+                        <div>Help</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Navigation -->
+    <div class="floating-nav">
+        <a href="#top" class="nav-item">⬆️</a>
+        <a href="index.html" class="nav-item">🏠</a>
+        <a href="#" class="nav-item" onclick="showLoginModal(); return false;">🔐</a>
+        <a href="#" class="nav-item" onclick="showNotification('Help coming soon!', 'info'); return false;">❓</a>
+    </div>
+    
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Check user status on load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserStatus();
+        });
+        
+        function checkUserStatus() {
+            const currentUser = localStorage.getItem('currentUser');
+            const userStatus = document.getElementById('userStatus');
+            
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                userStatus.innerHTML = `
+                    <div class="status-icon">🎉</div>
+                    <h3>Welcome back, ${user.name}!</h3>
+                    <p>You're logged in as a KR Mangalam University student</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                        <button class="btn-primary" onclick="window.location.href='index.html'">Go to Dashboard</button>
+                        <button class="btn-secondary" onclick="logout()">Logout</button>
+                    </div>
+                `;
+            }
+        }
+        
+        // Add smooth scroll to top
+        document.querySelector('a[href="#top"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Add hover effects to service tiles
+        document.querySelectorAll('.service-tile').forEach(tile => {
+            tile.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            tile.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        console.log('🎓 KR Mangalam StudentFreelance Navigation Hub loaded successfully!');
+        console.log('✅ All services connected and ready to use!');
+    </script>
+</body>
+</html>
